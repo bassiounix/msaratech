@@ -5,8 +5,10 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://msaratech.com',
+  output: 'server',
   adapter: cloudflare({
-    imageService: 'cloudflare'
+    platformProxy: {
+      enabled: true
+    }
   })
 });
